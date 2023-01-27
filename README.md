@@ -10,6 +10,6 @@ The script below doesn't have any error handling because I'm lazy. If you have i
 
 I'll leave creating the malicious .jar plugin to your imagination and exercise.
 
-NOTE: On the plus side, Openfire, by default, runs as NT Authority/System:
+NOTE: On the plus side, Openfire, by default, runs as NT Authority\System:
 
 ![image](https://user-images.githubusercontent.com/80063008/215106024-26a3eedb-eb5c-4919-8fe8-7a0f39aa4303.png)
